@@ -1,0 +1,253 @@
+:root {
+  --clr-primary-100: hsl(356, 96%, 45%);
+  --clr-primary-200: hsl(227, 73%, 42%);
+  --clr-primary-300: hsl(45, 100%, 50%);
+  --clr-primary-400: hsl(20, 100%, 55%);
+  --clr-primary-500: hsl(176, 100%, 38%);
+  --clr-primary-600: hsl(0, 0%, 95%);
+  --clr-primary-700: hsl(343, 100%, 69%);
+  --clr-primary-800: rgb(246,224,164);
+
+  --ff-title: "Barlow Condensed", sans-serif;
+  --ff-primary: "Roboto", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-title);
+
+  --fw-regular: 300;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  --fs-300: .8rem;
+  --fs-400: .9rem;
+  --fs-500: 1rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-900: 2rem;
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Utility classes */
+.bg-primary-800 {
+  background-color: var(--clr-primary-800);
+}
+.bg-primary-700 {
+  background-color: var(--clr-primary-700);
+}
+.bg-primary-600 {
+  background-color: var(--clr-primary-600);
+}
+.bg-primary-500 {
+  background-color: var(--clr-primary-500);
+}
+.bg-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+.bg-primary-300 {
+  background-color: var(--clr-primary-300);
+}
+.bg-primary-200 {
+  background-color: var(--clr-primary-200);
+}
+.bg-primary-100 {
+  background-color: var(--clr-primary-100);
+}
+
+.fw-regular {font-weight: var(--fw-regular);}
+.fw-bold { font-weight: var(--fw-bold);}
+.fw-semi-bold { font-weight: var(--fw-semi-bold);}
+.fw-extra-bold { font-weight: var(--fw-extra-bold);}
+
+/* General styling */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: var(--fs-500);
+  font-family: var(--ff-body);
+  color: rgb(35,31,32);
+}
+
+.content {
+  display: grid;
+  text-align: center;
+  align-self: center;
+  z-index: 0;
+}
+
+.content img {
+  width: 420px;
+  display: inline;
+}
+
+.content * a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+/* change links color with white bg */
+.bg-primary-600 * a {
+  color: var(--clr-primary-700);
+}
+
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  vertical-align: middle;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0.7em;
+  width: 100%;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--ff-title);
+  margin-top: 0;
+  font-size: 2.5em;
+}
+
+.email {
+  text-decoration: none;
+  color: rgb(20, 19, 19); 
+  font-size: 18px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 0 0 18px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.footer-info {
+  display: grid;
+  position: absolute;
+  bottom: 0;
+  left: 22px;
+  width: 320px;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+.description {
+  font-size: var(--fs-600);
+}
+
+.copyright {
+  font-size: var(--fs-300);
+}
+
+.policy {
+  font-size: var(--fs-700);
+  color: rgb(20, 19, 19);
+}
+
+.footer-nav {
+  position: absolute;
+  bottom: 0px;
+  right: 15px;
+  width: 200px;
+  text-align: right;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.footer-nav * a {
+  text-decoration: none;
+}
