@@ -138,6 +138,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 body {
@@ -166,18 +167,34 @@ body {
 /* change links color with white bg */
 .bg-primary-600 * a {
   color: var(--clr-primary-700);
+
 }
 
-
-html {
+.content {
   scroll-snap-type: y mandatory;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  height: 100vh; /* Full viewport height */
+  position: relative;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+}
+
+.content::-webkit-scrollbar {
+  display: none;
 }
 
 section {
-  vertical-align: middle;
-  height: 100vh;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.cover img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .header {
